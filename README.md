@@ -259,7 +259,7 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 ## Technical Stack
 
 **Languages & Core Libraries:**
-- Python 3.12
+- Python 3.10
 - pandas, numpy (data manipulation)
 - scikit-learn (modeling, evaluation)
 - transformers, torch (NLP)

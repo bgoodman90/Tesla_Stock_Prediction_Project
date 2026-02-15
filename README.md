@@ -207,12 +207,15 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 | **Test AUC** | 0.57 | Area Under ROC Curve - measures how well a binary classification model separates two classes |
 | **Accuracy** | 56% | Percentage of correct predictions |
 | **Precision (Up)** | 57% | Of all "Up" predictions, how many were correct |
+| **Precision (Down)** | 55% | Of all "Up" predictions, how many were correct |
 | **Recall (Up)** | 69% | Of all actual "Up" days, how many were correct |
+| **Recall (Down)** | 43% | Of all actual "Up" days, how many were correct |
 
 **Interpretation:**
 - AUC 0.57 represents 14% relative improvement over random guessing (0.50)
 - Model successfully extracts signal from noisy financial data
 - Balanced precision/recall indicates no systematic bias toward up or down predictions
+- Model performs better predicting upward trends than downward trends
 
 **Why Not Higher?**
 - Stock prices are influenced by thousands of factors beyond news sentiment

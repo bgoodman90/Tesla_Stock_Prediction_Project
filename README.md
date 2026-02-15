@@ -202,22 +202,21 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 
 **Logistic Regression Results:**
 
-| Metric | Value |
-|--------|-------|
-| **Test AUC** | 0.57 |
-| **Accuracy** | 56% |
-| **Precision (Up)** | 57% |
-| **Recall (Up)** | 69% |
+| Metric | Value | Definition |
+|--------|-------|------------|
+| **Test AUC** | 0.57 | Area Under ROC Curve - measures how well a binary classification model separates two classes |
+| **Accuracy** | 56% | Percentage of correct predictions |
+| **Precision (Up)** | 57% | Of all "Up" predictions, how many were correct |
+| **Recall (Up)** | 69% | Of all actual "Up" days, how many were correct |
 
 **Interpretation:**
 - AUC 0.57 represents 14% relative improvement over random guessing (0.50)
 - Model successfully extracts signal from noisy financial data
-- Performance aligns with realistic expectations for stock prediction
 - Balanced precision/recall indicates no systematic bias toward up or down predictions
 
 **Why Not Higher?**
 - Stock prices are influenced by thousands of factors beyond news sentiment
-- Market efficiency theory suggests predictable patterns are quickly arbitraged away
+- If prediction were easy, traders would exploit the pattern until it stopped working
 - External shocks (regulatory changes, competitor actions, macroeconomic events) are unpredictable
 
 ---
@@ -228,7 +227,7 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 
 **Discovery:** High article volume correlates with more negative sentiment
 
-- **Correlation:** -0.25 between 7-day MA article count and sentiment
+- **Correlation:** -0.25 between 7-day MA article count and sentiment (negative correlation indicates inverse relationship)
 - **Statistical Significance:** A/B test (p < 0.001) confirms high-volume days have lower sentiment
 - **Business Insight:** Major news events (earnings misses, controversies, regulatory actions) generate both high coverage and negative sentiment
 
@@ -255,7 +254,7 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 
 ### Potential Enhancements
 - Larger datasets: Multi-year history, multiple companies
-- Additional features: Social media sentiment, insider trading, short interest
+- Additional features: Social media sentiment, insider trading, short interest, **SEC filing analysis**
 - Advanced NLP: Topic modeling, event detection
 - Ensemble methods: Combine multiple models for robust predictions
 
@@ -281,10 +280,18 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 
 ## Reproducibility
 
-All code is documented with inline comments explaining methodology and rationale. Data collection scripts include timestamps and source attribution.
+### Running the Analysis
 
-**To replicate:**
-1. Run data collection scripts (note: news data is time-dependent)
-2. Execute sentiment analysis notebooks
-3. Run feature engineering pipeline
-4. Train and evaluate models
+All code is documented with inline comments explaining methodology and rationale.
+
+**To replicate analysis with current data:**
+1. Open and run `obtain_tesla_news.ipynb` (collects current news data)
+2. Open and run `tesla_sentiment_analysis.ipynb` (analyzes sentiment, engineers features)
+3. Open and run `tesla_stock_prediction.ipynb` (trains and evaluates model)
+
+**Note:** News data is currently fixed in time, alter end dates to fetch current articles, then results may differ from original analysis.
+
+**To view original analysis without re-running:**
+- All notebooks contain output cells with original results
+- Processed data available in `data_storage/`
+- Visualizations available in `output_plots/`

@@ -187,7 +187,7 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 - Computationally efficient
 
 **Alternative Explored:** XGBoost
-- Test AUC: 0.51 (underperformed logistic regression)
+- Test AUC: 0.52 (underperformed logistic regression)
 - Likely reasons: Small dataset (257 training samples), linear feature relationships
 - Conclusion: Tree-based models require more data to capture value
 

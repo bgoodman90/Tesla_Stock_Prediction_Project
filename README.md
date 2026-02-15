@@ -17,6 +17,11 @@ This project explores whether daily news sentiment and company communications ca
 
 ## Repository Navigation
 
+### Presentation (Main Directory)
+
+**`Tesla_Stock_Prediction_Slideshow.pdf`**
+- Short presentation for potential stakeholders.
+
 ### Notebooks (Main Directory)
 
 **`obtain_tesla_news.ipynb`**

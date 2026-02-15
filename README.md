@@ -207,9 +207,9 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 | **Test AUC** | 0.57 | Area Under ROC Curve - measures how well a binary classification model separates two classes |
 | **Accuracy** | 56% | Percentage of correct predictions |
 | **Precision (Up)** | 57% | Of all "Up" predictions, how many were correct |
-| **Precision (Down)** | 55% | Of all "Up" predictions, how many were correct |
+| **Precision (Down)** | 55% | Of all "Down" predictions, how many were correct |
 | **Recall (Up)** | 69% | Of all actual "Up" days, how many were correct |
-| **Recall (Down)** | 43% | Of all actual "Up" days, how many were correct |
+| **Recall (Down)** | 43% | Of all actual "Down" days, how many were correct |
 
 **Interpretation:**
 - AUC 0.57 represents 14% relative improvement over random guessing (0.50)

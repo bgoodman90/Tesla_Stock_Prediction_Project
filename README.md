@@ -238,8 +238,9 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 **Top Predictive Features (from logistic regression coefficients):**
 1. Recent price momentum (`return`)
 2. Sentiment-volume interaction (`avg_sentiment_ma7`)
-3. Article volume changes
+3. Volume (trading share) change between yesterday and today
 4. Closing price
+5. Article count (yesterday)
 
 **Insight:** Market momentum dominates, but sentiment provides incremental predictive value.
 

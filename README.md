@@ -214,7 +214,6 @@ df['target'] = (df['return_5d'] > 0).astype(int)
 **Interpretation:**
 - AUC 0.57 represents 14% relative improvement over random guessing (0.50)
 - Model successfully extracts signal from noisy financial data
-- Balanced precision/recall indicates no systematic bias toward up or down predictions
 - Model performs better predicting upward trends than downward trends
 
 **Why Not Higher?**
